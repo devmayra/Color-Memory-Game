@@ -72,7 +72,6 @@
 <body>
 <div id="app">
 
-    <!-- RONDA -->
     <div id="screen-round">
         <div class="header">
             <span id="round-counter">Ronda 1 / 5</span>
@@ -118,10 +117,9 @@
                 <div class="gradient-bar-wrap"><canvas id="grad-b" class="gradient-canvas" height="8"></canvas></div>
             </div>
         </div>
-        <div class="btn-container"><button onclick="submitRound()">✓ Confirmar color</button></div>
+        <div class="btn-container"><button onclick="submitRound()"> Confirmar color</button></div>
     </div>
 
-    <!-- RESULTADO -->
     <div id="screen-result" class="hidden">
         <div class="result-label" id="result-emoji-label">Puntuación de la ronda</div>
         <div class="result-score" id="result-points">0.00 / 10</div>
@@ -143,13 +141,12 @@
         <div class="btn-container"><button id="btn-next-round" onclick="nextRound()">Siguiente ronda →</button></div>
     </div>
 
-    <!-- FINAL -->
     <div id="screen-final" class="hidden">
-        <h1 style="font-size:32px;margin-bottom:4px">🎨 Resultado Final</h1>
+        <h1 style="font-size:32px;margin-bottom:4px">Resultado Final</h1>
         <div class="final-rank" id="final-rank">S</div>
         <div class="final-avg" id="final-avg">Promedio: 0.00 / 10</div>
         <div id="final-bars"></div>
-        <div class="btn-container"><button onclick="initGame()">🔄 Jugar de nuevo</button></div>
+        <div class="btn-container"><button onclick="initGame()"> Jugar de nuevo</button></div>
     </div>
 
 </div>
@@ -302,10 +299,9 @@ function submitRound(){
     scores.push(pts);
     const hexUser=hsbToHex(h,s,b), hexReal=hsbToHex(ch.h,ch.s,ch.b);
     const scoreColor=pts>=8?'#44dd88':pts>=5?'#ffcc44':'#ff6655';
-    const emoji=pts>=8?'🎯':pts>=5?'👀':'😅';
     document.getElementById('screen-round').classList.add('hidden');
     document.getElementById('screen-result').classList.remove('hidden');
-    document.getElementById('result-emoji-label').innerText=`${emoji}  Puntuación de la ronda`;
+    document.getElementById('result-emoji-label').innerText=`Puntuación de la ronda`;
     document.getElementById('result-points').innerText=`${pts} / 10`;
     document.getElementById('result-points').style.color=scoreColor;
     document.getElementById('res-user-color').style.backgroundColor=hexUser;
@@ -316,7 +312,7 @@ function submitRound(){
     document.getElementById('res-real-hsb').innerText=`H${ch.h}  S${ch.s}  B${ch.b}`;
     document.getElementById('res-char-name').innerText=`«${ch.name}»`;
     document.getElementById('btn-next-round').innerText=
-        roundNum+1<5?`Siguiente ronda → (${roundNum+2}/5)`:'Ver resultado final 🏆';
+        roundNum+1<5?`Siguiente ronda → (${roundNum+2}/5)`:'Ver resultado final';
 }
 
 function nextRound(){roundNum++; roundNum<5?startRound():showFinal();}

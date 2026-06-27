@@ -2,7 +2,7 @@
 
 Un juego de memoria visual inspirado en [Toon Tone](https://toontone.app/es/). Cada ronda te muestra un personaje animado y tenés que adivinar el color exacto de una parte de su cuerpo usando sliders de Matiz, Saturación y Brillo.
 
-**[▶ Jugar ahora](https://devmayra.github.io/color-memory-game/)**
+**[▶ Jugar ahora](https://devmayra.github.io/Color-Memory-Game/)**
 
 ---
 
